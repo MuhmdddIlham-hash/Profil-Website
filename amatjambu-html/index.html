@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>amatjambu — Front-end Creator</title>
+  <meta name="description" content="Profil amatjambu: foto, video, dan karya HTML, CSS, JavaScript." />
+  <link rel="icon" type="image/svg+xml" href="media/favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loader">
+    <div class="loader-glow"></div>
+    <div class="loader-top mono"><span class="js-name">amatjambu</span><span>Memuat profil…</span></div>
+    <div class="loader-center">
+      <div class="spinner"></div>
+      <p class="display loader-name js-name">amatjambu</p>
+    </div>
+    <div class="loader-bottom">
+      <span id="counter" class="display">000</span>
+      <div id="enter" class="enter hidden">
+        <button id="enterMusic" class="btn-white display">&#9835; Masuk</button>
+        <button id="enterSilent" class="link-mono">Masuk tanpa musik</button>
+      </div>
+    </div>
+    <div class="loader-bar"><div id="bar"></div></div>
+  </div>
+
+  <div id="progress"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand"><span class="logo"></span><span class="display js-name">amatjambu</span></a>
+      <nav class="nav-links">
+        <a href="#video">Video</a><a href="#gallery">Galeri</a><a href="#about">Tentang</a><a href="#contact">Medsos</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="themeBtn" class="icon-btn" aria-label="Ganti tema">&#9728;</button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Menu">&#9776;</button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu hidden">
+      <a href="#video">Video</a><a href="#gallery">Galeri</a><a href="#about">Tentang</a><a href="#contact">Medsos</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== BANNER ===== -->
+    <section id="top" class="hero">
+      <div id="banner" class="banner">
+        <div id="slides" class="slides"></div>
+        <div class="rays"></div>
+        <div class="sweep"></div>
+        <div id="torch" class="torch"><span></span><i></i></div>
+        <div class="banner-shade"></div>
+        <div class="banner-top mono">
+          <span><b class="dot"></b><span id="role"></span></span>
+          <span class="scroll-hint">Scroll <i></i></span>
+        </div>
+        <div class="banner-bottom">
+          <h1 id="name" class="display" aria-label="amatjambu"></h1>
+          <div class="rotator mono"><span class="spin-sym">&#10022;</span><span id="rotator" class="rot-box"></span><span class="spin-sym">&#10022;</span></div>
+        </div>
+      </div>
+      <div class="hero-info reveal">
+        <div class="hero-left">
+          <div class="avatar float"><img id="avatar" alt="Foto profil" /></div>
+          <p id="bio" class="muted lead"></p>
+        </div>
+        <div class="hero-right">
+          <span class="magnet"><a href="#video" class="btn-fire"><b>&#9654;</b>Tonton video</a></span>
+          <a href="#gallery" class="btn-outline">Lihat foto &#8600;</a>
+          <div id="heroSocials" class="hero-socials"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEKS BERJALAN ===== -->
+    <div class="marquee"><div id="marquee" class="marquee-track"></div></div>
+
+    <!-- ===== VIDEO ===== -->
+    <section id="video" class="section has-sym">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow mono"><span class="fire">01</span><span class="spin-sym fire">&#10022;</span><span class="scramble">Video</span></p>
+            <h2 class="split display"><span><i>Karya yang</i></span><span><i class="shimmer">bergerak.</i></span></h2>
+          </div>
+          <p class="muted lead">Kumpulan video karyaku — dari ide, ngoding, sampai jadi.</p>
+        </div>
+        <div class="player reveal">
+          <video id="player" playsinline preload="metadata"></video>
+          <div id="playerEmpty" class="video-empty hidden">
+            <p class="fire big-icon">&#9635;</p>
+            <p class="display">Slot video kosong</p>
+            <p class="mono small" id="playerEmptyPath"></p>
+          </div>
+          <button id="bigPlay" class="big-play" aria-label="Putar">&#9654;</button>
+          <div class="controls">
+            <button id="playBtn" class="ctrl-play">&#9654;</button>
+            <div id="seek" class="seek"><div id="seekFill"></div></div>
+            <span id="time" class="mono small">0:00 / 0:00</span>
+            <button id="muteBtn" class="ctrl">&#128266;</button>
+            <button id="fullBtn" class="ctrl" aria-label="Layar penuh">&#x26F6;</button>
+          </div>
+        </div>
+        <div id="picks" class="picks"></div>
+      </div>
+    </section>
+
+    <!-- ===== GALERI FOTO ===== -->
+    <section id="gallery" class="section has-sym">
+      <div class="container">
+        <p class="eyebrow mono reveal"><span class="fire">02</span><span class="spin-sym fire">&#10022;</span><span class="scramble">Foto</span></p>
+        <div id="grid" class="grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== TENTANG ===== -->
+    <section id="about" class="section panel has-sym">
+      <div class="container about">
+        <div class="editor reveal">
+          <div class="editor-bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i><span class="tab">profil.html</span><span class="tab dim">style.css</span></div>
+          <pre id="code" class="mono"></pre>
+        </div>
+        <div>
+          <div class="reveal">
+            <p class="eyebrow mono"><span class="fire">03</span><span class="spin-sym fire">&#10022;</span><span class="scramble">Tentang aku</span></p>
+            <h2 class="split display"><span><i>Ngoding itu</i></span><span><i class="shimmer">seni visual.</i></span></h2>
+            <p id="about-text" class="muted lead"></p>
+          </div>
+          <ul id="skills" class="skills"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MEDSOS ===== -->
+    <section id="contact" class="section has-sym">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow mono"><span class="fire">04</span><span class="spin-sym fire">&#10022;</span><span class="scramble">Medsos</span></p>
+          <h2 class="split display huge"><span><i>Sosmed</i></span><span><i class="shimmer js-name-dot">amatjambu.</i></span></h2>
+        </div>
+        <ul id="socials" class="socials"></ul>
+      </div>
+      <footer class="container footer">
+        <p class="display footer-name outline js-name">amatjambu</p>
+        <div class="footer-bar mono"><span id="copy"></span><a href="#top">Ke atas &#8593;</a></div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ===== FOTO BESAR (LIGHTBOX) ===== -->
+  <div id="lightbox" class="modal hidden">
+    <div class="lb-box">
+      <img id="lbImg" alt="" draggable="false" />
+      <div class="lb-bar">
+        <span id="lbCount" class="mono small muted">1 / 24</span>
+        <span class="mono small muted swipe-hint">Geser foto ke kiri / kanan</span>
+        <div><button id="lbPrev" class="round">&#8249;</button><button id="lbNext" class="round">&#8250;</button><button id="lbClose" class="round">&#10005;</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DETAIL VIDEO (LAYAR PENUH) ===== -->
+  <div id="detail" class="detail hidden">
+    <button id="dClose" class="d-close">&#10005;</button>
+    <div class="d-inner">
+      <div id="dMedia" class="d-media"></div>
+      <div class="d-nav">
+        <button id="dPrev" class="btn-outline small-btn">&#8249; Sebelumnya</button>
+        <span id="dCount" class="mono small muted">1 / 3</span>
+        <button id="dNext" class="btn-fire small-btn">Berikutnya &#8250;</button>
+      </div>
+      <div class="d-info">
+        <div><p id="dLabel" class="mono fire small">VIDEO 01</p><h3 id="dTitle" class="display"></h3></div>
+        <p id="dStory" class="lead"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOMBOL MUSIK ===== -->
+  <button id="musicBtn" class="music"><b id="musicIcon">&#9654;</b><span class="eq"><i></i><i></i><i></i><i></i></span><span id="musicTitle" class="mono small"></span></button>
+  <audio id="audio" loop preload="auto"></audio>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
