@@ -16,7 +16,7 @@ const DATA = {
   banner: ["media/banner-1.jpg", "media/banner-2.jpg", "media/banner-3.jpg", "media/banner-4.jpg"],
 
   // Lagu (tombol kiri bawah)
-  music: { src: "media/lagu.mp3", title: "[Judul lagu]" },
+  music: { src: "media/lagu.mp3", title: "[Be My Baby]" },
 
   // Video — tambah baris baru untuk video lain
   videos: [
